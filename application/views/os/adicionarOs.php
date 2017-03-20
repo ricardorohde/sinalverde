@@ -54,7 +54,7 @@
                                             <input id="dataInicial" class="span12 datepicker" type="text" name="dataInicial" value=""  />
                                         </div>
                                         <div class="span3">
-                                            <label for="dataFinal">Data Final</label>
+                                            <label for="dataFinal">Vencimento</label>
                                             <input id="dataFinal" class="span12 datepicker" type="text" name="dataFinal" value=""  />
                                         </div>
 
@@ -66,23 +66,16 @@
 
                                     <div class="span12" style="padding: 1%; margin-left: 0">
 
-                                        <div class="span6">
-                                            <label for="descricaoProduto">Descrição Produto/Serviço</label>
-                                            <textarea class="span12" name="descricaoProduto" id="descricaoProduto" cols="30" rows="5"></textarea>
-                                        </div>
-                                        <div class="span6">
-                                            <label for="defeito">Defeito</label>
-                                            <textarea class="span12" name="defeito" id="defeito" cols="30" rows="5"></textarea>
-                                        </div>
+                                        
 
                                     </div>
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span6">
-                                            <label for="observacoes">Observações</label>
+                                            <label for="observacoes">KM / Placa / Veículo</label>
                                             <textarea class="span12" name="observacoes" id="observacoes" cols="30" rows="5"></textarea>
                                         </div>
                                         <div class="span6">
-                                            <label for="laudoTecnico">Laudo Técnico</label>
+                                            <label for="laudoTecnico">Observações</label>
                                             <textarea class="span12" name="laudoTecnico" id="laudoTecnico" cols="30" rows="5"></textarea>
                                         </div>
                                     </div>

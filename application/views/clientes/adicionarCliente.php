@@ -110,27 +110,13 @@
            $('#formCliente').validate({
             rules :{
                   nomeCliente:{ required: true},
-                  documento:{ required: true},
-                  telefone:{ required: true},
-                  email:{ required: true},
-                  rua:{ required: true},
-                  numero:{ required: true},
-                  bairro:{ required: true},
-                  cidade:{ required: true},
-                  estado:{ required: true},
-                  cep:{ required: true}
+                  documento:{ required: true}
+                  
             },
             messages:{
                   nomeCliente :{ required: 'Campo Requerido.'},
-                  documento :{ required: 'Campo Requerido.'},
-                  telefone:{ required: 'Campo Requerido.'},
-                  email:{ required: 'Campo Requerido.'},
-                  rua:{ required: 'Campo Requerido.'},
-                  numero:{ required: 'Campo Requerido.'},
-                  bairro:{ required: 'Campo Requerido.'},
-                  cidade:{ required: 'Campo Requerido.'},
-                  estado:{ required: 'Campo Requerido.'},
-                  cep:{ required: 'Campo Requerido.'}
+                  documento :{ required: 'Campo Requerido.'}
+                  
 
             },
 

@@ -12,42 +12,42 @@ $config = array('clientes' => array(array(
 								array(
                                 	'field'=>'telefone',
                                 	'label'=>'Telefone',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'email',
                                 	'label'=>'Email',
-                                	'rules'=>'required|trim|valid_email|xss_clean'
+                                	'rules'=>'trim|valid_email|xss_clean'
                                 ),
 								array(
                                 	'field'=>'rua',
                                 	'label'=>'Rua',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'numero',
                                 	'label'=>'Número',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'bairro',
                                 	'label'=>'Bairro',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'cidade',
                                 	'label'=>'Cidade',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'estado',
                                 	'label'=>'Estado',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ),
 								array(
                                 	'field'=>'cep',
                                 	'label'=>'CEP',
-                                	'rules'=>'required|trim|xss_clean'
+                                	'rules'=>'trim|xss_clean'
                                 ))
                 ,
                 'servicos' => array(array(

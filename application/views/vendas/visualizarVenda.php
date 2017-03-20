@@ -46,18 +46,17 @@
                                             <li>
                                                 <span><h5>Cliente</h5>
                                                 <span><?php echo $result->nomeCliente?></span><br/>
-                                                <span><?php echo $result->rua?>, <?php echo $result->numero?>, <?php echo $result->bairro?></span><br/>
-                                                <span><?php echo $result->cidade?> - <?php echo $result->estado?></span>
+                                                
                                             </li>
                                         </ul>
                                     </td>
                                     <td style="width: 50%; padding-left: 0">
                                         <ul>
                                             <li>
-                                                <span><h5>Vendedor</h5></span>
+                                                <span><h5>Responsável</h5></span>
                                                 <span><?php echo $result->nome?></span> <br/>
                                                 <span>Telefone: <?php echo $result->telefone?></span><br/>
-                                                <span>Email: <?php echo $result->email?></span>
+                                        
                                             </li>
                                         </ul>
                                     </td>
