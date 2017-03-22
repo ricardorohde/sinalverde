@@ -142,7 +142,7 @@ if(!$results){?>
             
             echo '<td>';
             if($this->permission->checkPermission($this->session->userdata('permissao'),'eLancamento')){
-                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" descricao="'.$r->descricao.'" valor="'.$r->valor.'" vencimento="'.date('d/m/Y',strtotime($r->data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->data_pagamento)).'" baixado="'.$r->baixado.'" cliente="'.$r->cliente_fornecedor.'" formaPgto="'.$r->forma_pgto.'" tipo="'.$r->tipo.'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>'; 
+                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" descricao="'.$r->descricao.'" valor="'.$r->valor.'" vencimento="'.date('d/m/Y',strtotime($r->data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->data_pagamento)).'" baixado="'.$r->baixado.'" cliente="'.$r->cliente_fornecedor.'" formaPgto="'.$r->forma_pgto.'" tipo="'.$r->tipo.'" parcela1="'.$r->parcela1.'" parcela2="'.$r->parcela2.'" parcela3="'.$r->parcela3.'" parcela4="'.$r->parcela4.'" dataparcela1="'.date('d/m/Y',strtotime($r->dataparcela1)).'" dataparcela2="'.date('d/m/Y',strtotime($r->dataparcela2)).'" dataparcela3="'.date('d/m/Y',strtotime($r->dataparcela3)).'" dataparcela4="'.date('d/m/Y',strtotime($r->dataparcela4)).'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>'; 
             }
             if($this->permission->checkPermission($this->session->userdata('permissao'),'dLancamento')){
                 echo '<a href="#modalExcluir" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" class="btn btn-danger tip-top excluir" title="Excluir Lançamento"><i class="icon-remove icon-white"></i></a>'; 
@@ -344,13 +344,13 @@ if(!$results){?>
       </div>
       <div class="span12" style="margin-left: 0"> 
         <div class="span4" style="margin-left: 0">  
-          <label for="valor">Valor*</label>
+          <label for="valor">Valor TOTAL*</label>
           <input type="hidden"  name="tipo" value="despesa" />  
           <input type="hidden"  id="idEditar" name="id" value="" /> 
           <input class="span12 money"  type="text" name="valor" id="valorEditar" />
         </div>
         <div class="span4" >
-          <label for="vencimento">Data Vencimento*</label>
+          <label for="vencimento">Próximo Vencimento*</label>
           <input class="span12 datepicker"  type="text" name="vencimento" id="vencimentoEditar"  />
         </div>
         <div class="span4">
@@ -358,22 +358,11 @@ if(!$results){?>
           <select class="span12" name="tipo" id="tipoEditar">
             <option value="receita">Receita</option>
             <option value="despesa">Despesa</option>
-          </select>
-        </div>
+          </select>          
         
       </div>
-      <div class="span12" style="margin-left: 0"> 
-        <div class="span4" style="margin-left: 0">
-          <label for="pago">Foi Pago?</label>
-          &nbsp &nbsp &nbsp &nbsp<input  id="pagoEditar" type="checkbox" name="pago" value="1" /> 
-        </div>
-        <div id="divPagamentoEditar" class="span8" style=" display: none">
-          <div class="span6">
-            <label for="pagamento">Data Pagamento</label>
-            <input class="span12 datepicker" id="pagamentoEditar" type="text" name="pagamento" />  
-          </div>
-
-          <div class="span6">
+      <div class="span12" style="margin-left: 0">
+      <div class="span6">
             <label for="formaPgto">Forma Pgto</label>
             <select name="formaPgto" id="formaPgtoEditar"  class="span12">
               <option value="Dinheiro">Dinheiro</option>
@@ -384,6 +373,64 @@ if(!$results){?>
               <option value="Débito">Débito</option>        
             </select>
           </div>
+      </div>
+        <div class="span12" style="margin-left: 0">
+  
+        <div class="span4" style="margin-left: 0">  
+          <label for="parcela1">1ª Parcela</label>
+          <input class="span12 money"  type="text" name="parcela1" id="parcela1editar"  />
+        </div>
+        <div class="span4" >
+          <label for="dataparcela1">Data 1ª Parcela</label>
+          <input class="span12 datepicker"  type="text" name="dataparcela1" id="dataparcela1editar"  />
+        </div>
+        </div>
+      <div class="span12" style="margin-left: 0">
+  
+        <div class="span4" style="margin-left: 0">  
+          <label for="parcela2">2ª Parcela</label>
+          <input class="span12 money"  type="text" name="parcela2" id="parcela2editar" />
+        </div>
+        <div class="span4" >
+          <label for="dataparcela2">Data 2ª Parcela</label>
+          <input class="span12 datepicker"  type="text" name="dataparcela2" id="dataparcela2editar"  />
+        </div>
+        </div>
+      <div class="span12" style="margin-left: 0">
+  
+        <div class="span4" style="margin-left: 0">  
+          <label for="parcela3">3ª Parcela</label>
+          <input class="span12 money"  type="text" name="parcela3" id="parcela3editar" />
+        </div>
+        <div class="span4" >
+          <label for="dataparcela3">Data 3ª Parcela</label>
+          <input class="span12 datepicker"  type="text" name="dataparcela3" id="dataparcela3editar"  />
+        </div>
+        </div>
+      <div class="span12" style="margin-left: 0">
+  
+        <div class="span4" style="margin-left: 0">  
+          <label for="parcela4">4ª Parcela</label>
+          <input class="span12 money"  type="text" name="parcela4" id="parcela4editar" />
+        </div>
+        <div class="span4" >
+          <label for="dataparcela4">Data 4ª Parcela</label>
+          <input class="span12 datepicker"  type="text" name="dataparcela4" id="dataparcela4editar" />
+        </div>
+        </div>
+      <div class="span12" style="margin-left: 0">
+          
+        <div class="span4" style="margin-left: 0">
+          <label for="pago">Pagamento Completo?</label>
+          &nbsp &nbsp &nbsp &nbsp<input  id="pagoEditar" type="checkbox" name="pago" value="1" /> 
+        </div>
+        <div id="divPagamentoEditar" class="span8" style=" display: none">
+          <div class="span6">
+            <label for="pagamento">Data Final</label>
+            <input class="span12 datepicker" id="pagamentoEditar" type="text" name="pagamento" />  
+          </div>
+
+          
         </div>
         
       </div>
@@ -507,6 +554,14 @@ if(!$results){?>
       $("#valorEditar").val($(this).attr('valor'));
       $("#vencimentoEditar").val($(this).attr('vencimento'));
       $("#pagamentoEditar").val($(this).attr('pagamento'));
+      $("#parcela1editar").val($(this).attr('parcela1'));
+      $("#parcela2editar").val($(this).attr('parcela2'));
+      $("#parcela3editar").val($(this).attr('parcela3'));
+      $("#parcela4editar").val($(this).attr('parcela4'));
+      $("#dataparcela1editar").val($(this).attr('dataparcela1'));
+      $("#dataparcela2editar").val($(this).attr('dataparcela2'));
+      $("#dataparcela3editar").val($(this).attr('dataparcela3'));
+      $("#dataparcela4editar").val($(this).attr('dataparcela4'));
       $("#formaPgtoEditar").val($(this).attr('formaPgto'));
       $("#tipoEditar").val($(this).attr('tipo'));
       $("#urlAtualEditar").val($(location).attr('href'));

@@ -3,8 +3,8 @@
 class Financeiro_model extends CI_Model {
 	
     /**
-     * author: Leandro
-     * email: leandro.jsilveira@fatec.sp.gov.br
+     * author: Leandro Silveira
+     * email: silveira.jedi@gmail.com
      * 
      */
     

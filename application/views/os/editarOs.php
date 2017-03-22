@@ -343,7 +343,7 @@
       <div id="divRecebimento" class="span8" style=" display: none">
         <div class="span6">
           <label for="recebimento">Data Recebimento</label>
-          <input class="span12 datepicker" id="recebimento" type="text" name="recebimento" /> 
+          <input class="span12 datepicker" id="recebimento" type="text" name="recebimento" value="<?php echo date()?>" /> 
         </div>
         <div class="span6">
           <label for="formaPgto">Forma Pgto</label>
