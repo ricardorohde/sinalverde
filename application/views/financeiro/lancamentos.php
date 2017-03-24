@@ -236,6 +236,7 @@ if(!$results){?>
 		    		</select>
 		    	</div>
 	    	</div>
+            
     		
     	</div>
 
@@ -374,6 +375,16 @@ if(!$results){?>
             </select>
           </div>
       </div>
+          <div class="span12" style="margin-left: 0">
+                <div class="span4" style="margin-left: 0">  
+    			<label for="numcheque">Número Cheque</label>
+    			<input class="span12" id="numcheque" type="text" name="numcheque"  />
+    		</div>
+                <div class="span6">  
+    			<label for="nomecheque">Nome Cheque</label>
+    			<input class="span12" id="nomecheque" type="text" name="nomecheque"  />
+    		</div>
+          </div>
         <div class="span12" style="margin-left: 0">
   
         <div class="span4" style="margin-left: 0">  
