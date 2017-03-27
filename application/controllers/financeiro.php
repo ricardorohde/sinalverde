@@ -183,7 +183,7 @@ class Financeiro extends CI_Controller {
         $config['next_tag_close'] = '</li>';	
         $this->pagination->initialize($config); 	
 
-		$this->data['results'] = $this->financeiro_model->get('lancamentos','idLancamentos,descricao,valor,data_vencimento,data_pagamento,baixado,cliente_fornecedor,tipo,forma_pgto,parcela1,parcela2,parcela3,parcela4,dataparcela1,dataparcela2,dataparcela3,dataparcela4',$where,$config['per_page'],$this->uri->segment(3));
+		$this->data['results'] = $this->financeiro_model->get('lancamentos','idLancamentos,descricao,valor,data_vencimento,data_pagamento,baixado,cliente_fornecedor,tipo,forma_pgto,parcela1,parcela2,parcela3,parcela4,dataparcela1,dataparcela2,dataparcela3,dataparcela4,numcheque,nomecheque',$where,$config['per_page'],$this->uri->segment(3));
        
 	    $this->data['view'] = 'financeiro/lancamentos';
        	$this->load->view('tema/topo',$this->data);
@@ -235,7 +235,9 @@ class Financeiro extends CI_Controller {
 				'baixado' => $this->input->post('recebido'),
 				'cliente_fornecedor' => set_value('cliente'),
 				'forma_pgto' => $this->input->post('formaPgto'),
-				'tipo' => set_value('tipo')
+				'tipo' => set_value('tipo'),
+                                'numcheque' => $this->input->post('numcheque'),
+                                'nomecheque' => $this->input->post('nomecheque')
             );
 
             if ($this->financeiro_model->add('lancamentos',$data) == TRUE) {
@@ -295,7 +297,9 @@ class Financeiro extends CI_Controller {
 				'baixado' => $this->input->post('pago'),
 				'cliente_fornecedor' => set_value('fornecedor'),
 				'forma_pgto' => $this->input->post('formaPgto'),
-				'tipo' => set_value('tipo')
+				'tipo' => set_value('tipo'),
+                                'numcheque' => $this->input->post('numcheque'),
+                                'nomecheque' => $this->input->post('nomecheque')
             );
 
             if ($this->financeiro_model->add('lancamentos',$data) == TRUE) {
@@ -402,7 +406,9 @@ class Financeiro extends CI_Controller {
                 'dataparcela1' => $dataparcela1,
                 'dataparcela2' => $dataparcela2,
                 'dataparcela3' => $dataparcela3,
-                'dataparcela4' => $dataparcela4
+                'dataparcela4' => $dataparcela4,
+                'numcheque' => $this->input->post('numcheque'),
+                'nomecheque' => $this->input->post('nomecheque')
             );
 
             if ($this->financeiro_model->edit('lancamentos',$data,'idLancamentos',$this->input->post('id')) == TRUE) {
@@ -433,7 +439,9 @@ class Financeiro extends CI_Controller {
                 'dataparcela1' => $this->input->post('dataparcela1'),
                 'dataparcela2' => $this->input->post('dataparcela2'),
                 'dataparcela3' => $this->input->post('dataparcela3'),
-                'dataparcela4' => $this->input->post('dataparcela4')
+                'dataparcela4' => $this->input->post('dataparcela4'),
+                'numcheque' => $this->input->post('numcheque'),
+                'nomecheque' => $this->input->post('nomecheque')
             );
         print_r($data);
 

@@ -142,7 +142,7 @@ if(!$results){?>
             
             echo '<td>';
             if($this->permission->checkPermission($this->session->userdata('permissao'),'eLancamento')){
-                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" descricao="'.$r->descricao.'" valor="'.$r->valor.'" vencimento="'.date('d/m/Y',strtotime($r->data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->data_pagamento)).'" baixado="'.$r->baixado.'" cliente="'.$r->cliente_fornecedor.'" formaPgto="'.$r->forma_pgto.'" tipo="'.$r->tipo.'" parcela1="'.$r->parcela1.'" parcela2="'.$r->parcela2.'" parcela3="'.$r->parcela3.'" parcela4="'.$r->parcela4.'" dataparcela1="'.date('d/m/Y',strtotime($r->dataparcela1)).'" dataparcela2="'.date('d/m/Y',strtotime($r->dataparcela2)).'" dataparcela3="'.date('d/m/Y',strtotime($r->dataparcela3)).'" dataparcela4="'.date('d/m/Y',strtotime($r->dataparcela4)).'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>'; 
+                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" descricao="'.$r->descricao.'" valor="'.$r->valor.'" vencimento="'.date('d/m/Y',strtotime($r->data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->data_pagamento)).'" baixado="'.$r->baixado.'" cliente="'.$r->cliente_fornecedor.'" formaPgto="'.$r->forma_pgto.'" tipo="'.$r->tipo.'" numcheque="'.$r->numcheque.'" nomecheque="'.$r->nomecheque.'" parcela1="'.$r->parcela1.'" parcela2="'.$r->parcela2.'" parcela3="'.$r->parcela3.'" parcela4="'.$r->parcela4.'" dataparcela1="'.date('d/m/Y',strtotime($r->dataparcela1)).'" dataparcela2="'.date('d/m/Y',strtotime($r->dataparcela2)).'" dataparcela3="'.date('d/m/Y',strtotime($r->dataparcela3)).'" dataparcela4="'.date('d/m/Y',strtotime($r->dataparcela4)).'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>'; 
             }
             if($this->permission->checkPermission($this->session->userdata('permissao'),'dLancamento')){
                 echo '<a href="#modalExcluir" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" class="btn btn-danger tip-top excluir" title="Excluir Lançamento"><i class="icon-remove icon-white"></i></a>'; 
@@ -377,12 +377,12 @@ if(!$results){?>
       </div>
           <div class="span12" style="margin-left: 0">
                 <div class="span4" style="margin-left: 0">  
-    			<label for="numcheque">Número Cheque</label>
-    			<input class="span12" id="numcheque" type="text" name="numcheque"  />
+    			<label for="numchequelab">Número Cheque</label>
+    			<input class="span12" id="numchequeeditar" type="text" name="numcheque"  />
     		</div>
                 <div class="span6">  
-    			<label for="nomecheque">Nome Cheque</label>
-    			<input class="span12" id="nomecheque" type="text" name="nomecheque"  />
+    			<label for="nomechequelab">Nome Cheque</label>
+    			<input class="span12" id="nomechequeeditar" type="text" name="nomecheque"  />
     		</div>
           </div>
         <div class="span12" style="margin-left: 0">
@@ -573,6 +573,8 @@ if(!$results){?>
       $("#dataparcela2editar").val($(this).attr('dataparcela2'));
       $("#dataparcela3editar").val($(this).attr('dataparcela3'));
       $("#dataparcela4editar").val($(this).attr('dataparcela4'));
+      $("#numchequeeditar").val($(this).attr('numcheque'));
+      $("#nomechequeeditar").val($(this).attr('nomecheque'));
       $("#formaPgtoEditar").val($(this).attr('formaPgto'));
       $("#tipoEditar").val($(this).attr('tipo'));
       $("#urlAtualEditar").val($(location).attr('href'));
