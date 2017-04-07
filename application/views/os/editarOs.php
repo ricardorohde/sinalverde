@@ -20,6 +20,7 @@
                         <li id="tabProdutos"><a href="#tab2" data-toggle="tab">Produtos</a></li>
                         <li id="tabServicos"><a href="#tab3" data-toggle="tab">Serviços</a></li>
                         <li id="tabAnexos"><a href="#tab4" data-toggle="tab">Anexos</a></li>
+                        <li id="tabServicos2"><a href="#tab5" data-toggle="tab">Serviços (antigo)</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
@@ -163,12 +164,17 @@
                                 <div class="span12 well" style="padding: 1%; margin-left: 0">
                                     <form id="formServicos" action="<?php echo base_url() ?>index.php/os/adicionarServico" method="post">
                                     <div class="span10">
-                                        <input type="hidden" name="idServico" id="idServico" />
                                         <input type="hidden" name="idOsServico" id="idOsServico" value="<?php echo $result->idOs?>" />
-                                        <input type="hidden" name="precoServico" id="precoServico" value=""/>
-                                        <label for="">Serviço</label>
-                                        <input type="text" class="span12" name="servico" id="servico" placeholder="Digite o nome do serviço" />
                                     </div>
+                                    <div class="span7">
+                                        <label for="">Serviços</label>
+                                        <input type="text" class="span12" name="info" id="info" placeholder="Digite a descrição do serviço" />
+                                        </div>
+                                        <div class="span2">
+                                        <label for="">Valor</label>
+                                        <input type="text" class="span12" name="valorsrv" id="valorsrv" placeholder="Valor" />
+                                        </div>
+                                        
                                     <div class="span2">
                                         <label for="">.</label>
                                         <button class="btn btn-success span12"><i class="icon-white icon-plus"></i> Adicionar</button>
@@ -187,13 +193,13 @@
                                         <tbody>
                                             <?php
                                         $total = 0;
-                                        foreach ($servicos as $s) {
-                                            $preco = $s->preco;
+                                        foreach ($servicos2 as $s) {
+                                            $preco = $s->totalsrv;
                                             $total = $total + $preco;
                                             echo '<tr>';
-                                            echo '<td>'.$s->nome.'</td>';
+                                            echo '<td>'.$s->descricao.'</td>';
                                             echo '<td><span idAcao="'.$s->idServicos_os.'" title="Excluir Serviço" class="btn btn-danger"><i class="icon-remove icon-white"></i></span></td>';
-                                            echo '<td>R$ '.number_format($s->preco,2,',','.').'</td>';
+                                            echo '<td>R$ '.number_format($s->totalsrv,2,',','.').'</td>';
                                             echo '</tr>';
                                         }?>
 
@@ -252,6 +258,39 @@
                                         $cont ++;
                                     } ?>
                                 </div>
+
+                            </div>
+                        </div>
+                        
+                        <!--Serviços2-->
+                        <div class="tab-pane" id="tab5">
+                            <div class="span12" style="padding: 1%; margin-left: 0">
+                                
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Serviço</th>
+                                                <th>Sub-total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                        $total = 0;
+                                        foreach ($servicos as $s) {
+                                            $preco = $s->preco;
+                                            $total = $total + $preco;
+                                            echo '<tr>';
+                                            echo '<td>'.$s->nome.'</td>';
+                                            echo '<td>R$ '.number_format($s->preco,2,',','.').'</td>';
+                                            echo '</tr>';
+                                        }?>
+
+                                        <tr>
+                                            <td colspan="1" style="text-align: right"><strong>Total:</strong></td>
+                                            <td><strong>R$ <?php echo number_format($total,2,',','.');?><input type="hidden" id="total-servico" value="<?php echo number_format($total,2); ?>"></strong></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
 
                             </div>
                         </div>

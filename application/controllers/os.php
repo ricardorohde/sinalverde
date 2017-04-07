@@ -206,6 +206,7 @@ class Os extends CI_Controller {
         $this->data['result'] = $this->os_model->getById($this->uri->segment(3));
         $this->data['produtos'] = $this->os_model->getProdutos($this->uri->segment(3));
         $this->data['servicos'] = $this->os_model->getServicos($this->uri->segment(3));
+        $this->data['servicos2'] = $this->os_model->getServicos2($this->uri->segment(3));
         $this->data['anexos'] = $this->os_model->getAnexos($this->uri->segment(3));
         $this->data['view'] = 'os/editarOs';
         $this->load->view('tema/topo', $this->data);
@@ -224,6 +225,7 @@ class Os extends CI_Controller {
         $this->data['result'] = $this->os_model->getById($this->uri->segment(3));
         $this->data['produtos'] = $this->os_model->getProdutos($this->uri->segment(3));
         $this->data['servicos'] = $this->os_model->getServicos($this->uri->segment(3));
+        $this->data['servicos2'] = $this->os_model->getServicos2($this->uri->segment(3));
         $this->data['emitente'] = $this->mapos_model->getEmitente();
 
         $this->data['view'] = 'os/visualizarOs';
@@ -344,11 +346,12 @@ class Os extends CI_Controller {
 
         
         $data = array(
-            'servicos_id'=> $this->input->post('idServico'),
+            'descricao'=> $this->input->post('info'),
             'os_id'=> $this->input->post('idOsServico'),
+            'totalsrv'=> $this->input->post('valorsrv'),
         );
 
-        if($this->os_model->add('servicos_os', $data) == true){
+        if($this->os_model->add('servicos_os2', $data) == true){
 
             echo json_encode(array('result'=> true));
         }else{
@@ -359,7 +362,7 @@ class Os extends CI_Controller {
 
     function excluirServico(){
             $ID = $this->input->post('idServico');
-            if($this->os_model->delete('servicos_os','idServicos_os',$ID) == true){
+            if($this->os_model->delete('servicos_os2','idServicos_os',$ID) == true){
 
                 echo json_encode(array('result'=> true));
             }

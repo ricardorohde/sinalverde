@@ -56,6 +56,13 @@ class Os_model extends CI_Model {
         return $this->db->get()->result();
     }
     
+    public function getServicos2($id = null){
+        $this->db->select('*');
+        $this->db->from('servicos_os2');
+        $this->db->where('os_id',$id);
+        return $this->db->get()->result();
+    }
+    
     function add($table,$data,$returnId = false){
 
         $this->db->insert($table, $data);         

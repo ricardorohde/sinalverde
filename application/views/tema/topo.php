@@ -58,11 +58,7 @@
     <?php if($this->permission->checkPermission($this->session->userdata('permissao'),'vProduto')){ ?>
         <li class="<?php if(isset($menuProdutos)){echo 'active';};?>"><a href="<?php echo base_url()?>index.php/produtos"><i class="icon icon-barcode"></i> <span>Produtos</span></a></li>
     <?php } ?>
-    
-    <?php if($this->permission->checkPermission($this->session->userdata('permissao'),'vServico')){ ?>
-        <li class="<?php if(isset($menuServicos)){echo 'active';};?>"><a href="<?php echo base_url()?>index.php/servicos"><i class="icon icon-wrench"></i> <span>Serviços</span></a></li>
-    <?php } ?>
-
+        
     <?php if($this->permission->checkPermission($this->session->userdata('permissao'),'vOs')){ ?>
         <li class="<?php if(isset($menuOs)){echo 'active';};?>"><a href="<?php echo base_url()?>index.php/os"><i class="icon icon-tags"></i> <span>Ordens de Serviço</span></a></li>
     <?php } ?>
@@ -168,7 +164,7 @@
 </div>
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2017 &copy; Sistema Sinal Verde - Danilo Lima</div>
+  <div id="footer" class="span12"> 2017 &copy; Sistema Sinal Verde - Danilo Lima v1.1</div>
 </div>
 <!--end-Footer-part-->
 

@@ -29,8 +29,8 @@
                                 <?php } else {?>
                                 <tr>
                                     <td style="width: 25%"><img src=" <?php echo $emitente[0]->url_logo; ?> "></td>
-                                    <td> <span style="font-size: 18px; "> <?php echo $emitente[0]->nome; ?></span> </br><span style="font-size: 12px; "><?php echo $emitente[0]->cnpj; ?> </br> <?php echo $emitente[0]->rua.', nº:'.$emitente[0]->numero.', '.$emitente[0]->bairro.' - '.$emitente[0]->cidade.' - '.$emitente[0]->uf; ?> </span> </br> <span style="font-size: 12px; "> E-mail: <?php echo $emitente[0]->email.' - Fone: '.$emitente[0]->telefone; ?></span></td>
-                                    <td style="width: 18%; text-align: center"> <span style="font-size: 16px; "> #Protocolo:<?php echo $result->idOs?></span></br> </br> <span style="font-size: 12px; ">Emissão: <?php echo date('d/m/Y')?></span> <span style="font-size: 12px; ">Venc.: <?php echo date('d/m/Y', strtotime($result->dataFinal));?></span></td>
+                                    <td> <span style="font-size: 18px; "> <?php echo $emitente[0]->nome; ?></span> </br><span style="font-size: 13px; "><?php echo $emitente[0]->cnpj; ?> </br> <?php echo $emitente[0]->rua.', nº:'.$emitente[0]->numero.', '.$emitente[0]->bairro.' - '.$emitente[0]->cidade.' - '.$emitente[0]->uf; ?> </span> </br> <span style="font-size: 13px; "> E-mail: <?php echo $emitente[0]->email.' - Fone: '.$emitente[0]->telefone; ?></span></td>
+                                    <td style="width: 18%; text-align: center"> <span style="font-size: 16px; "> #Protocolo:<?php echo $result->idOs?></span></br> </br> <span style="font-size: 13px; ">Emissão: <?php echo date('d/m/Y')?></span> <span style="font-size: 13px; ">Venc.: <?php echo date('d/m/Y', strtotime($result->dataFinal));?></span></td>
                                 </tr>
 
                                 <?php } ?>
@@ -45,9 +45,9 @@
                                         <ul>
                                             <li>
                                                 <span><h5>Cliente</h5>
-                                                <span style="font-size: 12px; "><?php echo $result->nomeCliente?></span><br/>
-                                                <span style="font-size: 12px; "><?php echo $result->rua?>, <?php echo $result->numero?>, <?php echo $result->bairro?></span><br/>
-                                                <span style="font-size: 12px; "><?php echo $result->cidade?> - <?php echo $result->estado?></span>
+                                                <span style="font-size: 13px; "><?php echo $result->nomeCliente?></span><br/>
+                                                <span style="font-size: 13px; "><?php echo $result->rua?>, <?php echo $result->numero?>, <?php echo $result->bairro?></span><br/>
+                                                <span style="font-size: 13px; "><?php echo $result->cidade?> - <?php echo $result->estado?></span>
                                             </li>
                                         </ul>
                                     </td>
@@ -55,8 +55,8 @@
                                         <ul>
                                             <li>
                                                 <span><h5>Responsável</h5></span>
-                                                <span style="font-size: 12px; "><?php echo $result->nome?></span> <br/>
-                                                <span style="font-size: 12px; ">Telefone: <?php echo $result->telefone?></span><br/>
+                                                <span style="font-size: 13px; "><?php echo $result->nome?></span> <br/>
+                                                <span style="font-size: 13px; ">Telefone: <?php echo $result->telefone?></span><br/>
                                                 
                                             </li>
                                         </ul>
@@ -78,7 +78,7 @@
                                                 <?php if($result->observacoes != null){?>
                                                  <h5>KM / Placa / Veículo</h5>
                                                   <p>
-                                                      <span style="font-size: 12px; "><?php echo $result->observacoes?></span>
+                                                      <span style="font-size: 13px; "><?php echo $result->observacoes?></span>
                                                  </p>
                                                 <?php }?>
                                                
@@ -91,7 +91,7 @@
                                                 <?php if($result->laudoTecnico != null){?>
                                                 <h5>Observações</h5>
                                                 <p>
-                                                    <span style="font-size: 12px; "><?php echo $result->laudoTecnico?></span>
+                                                    <span style="font-size: 13px; "><?php echo $result->laudoTecnico?></span>
                                                 </p>
                                                  <?php }?>
                                                 
@@ -119,44 +119,44 @@
 
                                             $totalProdutos = $totalProdutos + $p->subTotal;
                                             echo '<tr>';
-                                            echo '<td><span style="font-size: 12px; ">'.$p->descricao.'</span></td>';
-                                            echo '<td><span style="font-size: 12px; ">'.$p->quantidade.'</span></td>';
+                                            echo '<td><span style="font-size: 13px; ">'.$p->descricao.'</span></td>';
+                                            echo '<td><span style="font-size: 13px; ">'.$p->quantidade.'</span></td>';
                                             
-                                            echo '<td><span style="font-size: 12px; ">R$ '.number_format($p->subTotal,2,',','.').'</span></td>';
+                                            echo '<td><span style="font-size: 13px; ">R$ '.number_format($p->subTotal,2,',','.').'</span></td>';
                                             echo '</tr>';
                                         }?>
 
                                         <tr>
-                                            <td colspan="2" style="text-align: right"><span style="font-size: 12px; "><strong>Total:</strong></span></td>
-                                            <td><span style="font-size: 12px; "><strong>R$ <?php echo number_format($totalProdutos,2,',','.');?></strong></span></td>
+                                            <td colspan="2" style="text-align: right"><span style="font-size: 13px; "><strong>Total:</strong></span></td>
+                                            <td><span style="font-size: 13px; "><strong>R$ <?php echo number_format($totalProdutos,2,',','.');?></strong></span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                                <?php }?>
                         
-                        <?php if($servicos != null){?>
+                        <?php if($servicos2 != null){?>
                         <table class="table table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>Serviço</th>
+                                                <th>Mão de Obra</th>
                                                 <th>Sub-total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                         setlocale(LC_MONETARY, 'en_US');
-                                        foreach ($servicos as $s) {
-                                            $preco = $s->preco;
+                                        foreach ($servicos2 as $s) {
+                                            $preco = $s->totalsrv;
                                             $totalServico = $totalServico + $preco;
                                             echo '<tr>';
-                                            echo '<td><span style="font-size: 12px; ">'.$s->nome.'</span></td>';
-                                            echo '<td><span style="font-size: 12px; ">R$ '.number_format($s->preco, 2, ',', '.').'</span></td>';
+                                            echo '<td style="width: 75%; padding-left: 2"><span style="font-size: 12px; ">'.$s->descricao.'</span></td>';
+                                            echo '<td><span style="font-size: 12px; ">R$ '.number_format($s->totalsrv, 2, ',', '.').'</span></td>';
                                             echo '</tr>';
                                         }?>
 
                                         <tr>
-                                            <td colspan="1" style="text-align: right"><span style="font-size: 12px; "><strong>Total:</strong></span></td>
-                                            <td><span style="font-size: 12px; "><strong>R$ <?php  echo number_format($totalServico, 2, ',', '.');?></strong></span></td>
+                                            <td colspan="1" style="text-align: right"><strong>Total:</strong></td>
+                                            <td><strong>R$ <?php  echo number_format($totalServico, 2, ',', '.');?></strong></td>
                                         </tr>
                                         </tbody>
                                     </table>
