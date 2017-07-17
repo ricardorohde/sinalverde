@@ -138,7 +138,7 @@
                                         }?>
 
                                         <tr>
-                                            <td colspan="1" style="text-align: right"><strong>Total:</strong></td>
+                                            <td colspan="1" style="text-align: right"><span style="font-size: 9px; "><strong>Total:</strong></span></td>
                                             <td><span style="font-size: 9px; "><strong>R$ <?php  echo number_format($totalServico, 2, ',', '.');?></strong></span></td>
                                         </tr>
                                         </tbody>
